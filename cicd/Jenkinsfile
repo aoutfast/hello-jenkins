@@ -1,0 +1,18 @@
+pipeline {
+  agent{
+      kubernetes {
+        yamlFile 'cicd/pods.yaml'
+      }
+  }
+  stages {
+    stage("Test") {
+      steps {
+          container('node-runner') {
+            sh "npm install"
+            sh "npm test"
+          }
+      }
+    }
+  }
+  
+}
