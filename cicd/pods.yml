@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: data-collab-ci
+spec:
+  containers:
+  - name: node-runner
+    image: node:lts
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    command:
+      - sleep
+    args:
+      - infinity
