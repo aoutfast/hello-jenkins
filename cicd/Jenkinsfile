@@ -16,6 +16,7 @@ pipeline {
     stage("Test 2") {
       steps {
           container('node-runner') {
+            input 'Do you approve Second Testing?'
             sh "npm test"
           }
       }
