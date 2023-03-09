@@ -5,10 +5,17 @@ pipeline {
       }
   }
   stages {
-    stage("Test") {
+    stage("Test 1") {
       steps {
           container('node-runner') {
             sh "npm install"
+            sh "npm test"
+          }
+      }
+    }
+    stage("Test 2") {
+      steps {
+          container('node-runner') {
             sh "npm test"
           }
       }
